@@ -7,46 +7,19 @@ import LanguageContext from '../../contexts/LanguageContext';
 import './WordList.css';
 
 class WordList extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      language: '',
-      words: []
-    }
-  }
 
   static contextType = LanguageContext;
 
-  componentDidMount() {
-    console.log(this.context);
+  componentWillMount() {
     LanguageApiService.getWords()
       .then(res => {
-        console.log(res);
         this.context.setLanguage(res.language);
-        this.setState({
-          language: res.language,
-          words: res.words
-        })
+        this.context.setWords(res.words);
       });
   }
 
-  // handleClick = () => {
-  //   console.log(this.context);
-  //   this.props.startLearning();
-  // }
-
-  // getTotalCorrect = () => {
-  //   console.log('Adding');
-  //   let total = 0;
-  //   this.state.words.map(word => {
-  //     total += word.correct_count;
-  //     return word;
-  //   }) 
-  //   return total;
-  // }
-
   renderWordList() {
-    const words = this.state.words.map((word, i) => <li key={i}><Word word={word}/></li>)
+    const words = this.context.words.map((word, i) => <li key={i}><Word word={word}/></li>)
     return (
       <ul>
         {words}
@@ -57,13 +30,13 @@ class WordList extends React.Component {
   render() {
     return (
       <div className="WordList">
-        <h2>Start Practicing {this.state.language.name}</h2>
+        <h2>Start Practicing {this.context.language.name}</h2>
         <h3>Words to practice</h3>
         {this.renderWordList()}
         <Link to='/learn'>
           Start practicing
         </Link>
-        <h4 className="total-correct">Total correct answers: {this.state.language.total_score}</h4>
+        <h4 className="total-correct">Total correct answers: {this.context.language.total_score}</h4>
       </div>
     )
   }

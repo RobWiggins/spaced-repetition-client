@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const LanguageContext = React.createContext({
   language: {},
   words: [],
-  setLanguage: () => {console.log('DERP')},
+  setLanguage: () => {},
   setWords: () => {}
 })
 
@@ -20,9 +20,7 @@ export class LanguageProvider extends Component {
   }
 
   setLanguage = (lang) => {
-    console.log(`Context Language`);
     console.log(lang);
-    console.log('Set context state');
     this.setState({language: lang});
   }
 
@@ -39,7 +37,6 @@ export class LanguageProvider extends Component {
       setWords: this.setWords,
     }
 
-    console.log(`Value: ${value}`);
     return (
       <LanguageContext.Provider value={value}>
         {this.props.children}

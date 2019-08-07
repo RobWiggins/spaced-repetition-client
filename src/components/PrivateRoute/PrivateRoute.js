@@ -1,8 +1,6 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import UserContext from '../../contexts/UserContext'
-import LanguageContext from '../../contexts/LanguageContext';
-// import CombinedContext from '../../contexts/CombinedContext';
 
 export default function PrivateRoute({ component, ...props }) {
   const Component = component
@@ -13,13 +11,7 @@ export default function PrivateRoute({ component, ...props }) {
         <UserContext.Consumer>
           {userContext =>
             !!userContext.user.id
-              ? (
-                <LanguageContext.Consumer>
-                  {(LanguageContext) =>
-                    <Component {...componentProps} />
-                  }
-                </LanguageContext.Consumer>
-              )
+              ? <Component {...componentProps} />
               : (
                 <Redirect
                   to={{
