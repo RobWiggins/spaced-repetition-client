@@ -1,11 +1,18 @@
-#learning-container section h3, #learning-container p {
+#learning-container p {
+  display: inline-block;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+.translate-container span {
+  font-size: 2rem;
+  margin-bottom: 20px;
   display: inline-block;
   margin-left: 50%;
   transform: translate(-50%);
 }
 
 #submit-form {
-  width: fit-content;
   display: inline-block;
   margin-left: 50%;
   transform: translate(-50%);
@@ -18,6 +25,7 @@
 #submit-form input {
   margin-top: 10px;
   margin-left: 50%;
+  border: 1px solid gray;
   transform: translate(-50%);
 }
 
