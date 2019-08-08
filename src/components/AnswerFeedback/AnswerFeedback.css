@@ -1,0 +1,10 @@
+/* .AnswerFeedback {
+  width: 980px;
+} */
+
+.AnswerFeedback h3, .AnswerFeedback p, .AnswerFeedback button {
+  display: inline-block;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
