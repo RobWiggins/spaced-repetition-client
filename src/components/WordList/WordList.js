@@ -10,7 +10,7 @@ class WordList extends React.Component {
 
   static contextType = LanguageContext;
 
-  componentWillMount() {
+  componentDidMount() {
     LanguageApiService.getWords()
       .then(res => {
         this.context.setLanguage(res.language);
