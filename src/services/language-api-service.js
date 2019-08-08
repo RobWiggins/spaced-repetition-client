@@ -53,17 +53,8 @@ const LanguageApiService = {
         }
         console.log('res: ', res);
         return res.json()
-      }).then(guessRes => {
-        LearningContext.clearError();
-        LearningContext.setTotalScore(guessRes.totalScore);
-        LearningContext.setWordCorrectCount(guessRes.wordCorrectCount);
-        LearningContext.setWordIncorrectCount(guessRes.wordIncorrectCount);
-        LearningContext.setNextWord(guessRes.nextWord)
-        LearningContext.setAnswer(guessRes.answer);
-        LearningContext.setGuess(guess);
-        LearningContext.setPrevWord('HOW TO SET THIS? Implement.')
-        LearningContext.setIsCorrect(guessRes.isCorrect)
-      }).catch(e => console.error('guess processing failure.'))
+      })
+      .catch(e => console.error('guess fetch failure.'))
       
   }
 }

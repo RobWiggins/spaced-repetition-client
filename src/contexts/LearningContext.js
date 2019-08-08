@@ -10,6 +10,7 @@ const initialState = {
   isCorrect: null,
   answer: null,
   error: null,
+  isResultDisplayed: false,
 }
 
 const LearningContext = React.createContext({
@@ -24,6 +25,7 @@ const LearningContext = React.createContext({
   setAnswer: () => { },
   setIsCorrect: () => { },
   reset: () => { },
+  setIsResultDisplayed: () => { },
 })
 
 export default LearningContext
@@ -80,6 +82,10 @@ export class LearningProvider extends Component {
       ...initialState,
     })
   }
+
+  setIsResultDisplayed = (bool) => {
+    this.setState({ isResultDisplayed: bool})
+  }
   
   render() {
     const value = {
@@ -93,6 +99,7 @@ export class LearningProvider extends Component {
       isCorrect: this.state.isCorrect,
       answer: this.state.answer,
       error: this.state.error,
+      isResultDisplayed: this.state.isResultDisplayed,
       // methods
       setError: this.setError,
       clearError: this.clearError,
@@ -105,6 +112,7 @@ export class LearningProvider extends Component {
       setIsCorrect: this.setIsCorrect,
       setAnswer: this.setAnswer,
       reset: this.reset,
+      setIsResultDisplayed: this.setIsResultDisplayed,
     }
     return (
       <LearningContext.Provider value={value}>

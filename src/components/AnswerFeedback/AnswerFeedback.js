@@ -1,21 +1,22 @@
 import React from 'react';
 import Button from '../Button/Button';
 import LanguageContext from '../../contexts/LanguageContext';
+import LearningContext from '../../contexts/LearningContext';
 import './AnswerFeedback.css';
 
 class AnswerFeedback extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      guess: 'learn',
-      index : 0
-    }
-  }
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     guess: 'learn',
+  //     index : 0
+  //   }
+  // }
 
-  static contextType = LanguageContext;
+  static contextType = LearningContext;
 
   handleClick = () => {
-    // Do stuff
+    this.context.setIsResultDisplayed(false);
   }
 
   getRandomWord = () => {
@@ -35,13 +36,17 @@ class AnswerFeedback extends React.Component {
   render() {
     console.log(this.context);
     return (
-      <div className="AnswerFeedback">
-        {this.renderMessage()}
-        <p>The correct translation for '{this.context.words[this.state.index].original}' was '{this.context.words[this.state.index].translation}' and you chose (guess)!</p>
-        <p className="total-score">Your total score is: {this.context.language.total_score}</p>
-        <Button onClick={this.getRandomWord}>Try another word!</Button>
-      </div>
-    )
+      <section id="feedback">
+        <p>Results for our next word: {this.context.nextWord}</p>
+        <button onClick={() => this.handleClick()}>Next Question</button>
+    {/* //    <div className="AnswerFeedback">
+    //      {this.renderMessage()}
+    //      <p>The correct translation for '{this.context.words[this.state.index].original}' was '{this.context.words[this.state.index].translation}' and you chose (guess)!</p>
+    //     <p className="total-score">Your total score is: {this.context.language.total_score}</p>
+    //     <Button onClick={this.getRandomWord}>Try another word!</Button>
+    //   </div> */}
+    </section>
+    );
   }
 }
 
