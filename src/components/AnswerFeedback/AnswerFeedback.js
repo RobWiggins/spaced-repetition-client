@@ -13,11 +13,10 @@ class AnswerFeedback extends React.Component {
   }
 
   renderMessage = () => {
-    const correct = true;
-    if (correct) {
-      return <h3>'You were correct! :D'</h3>
+    if (this.context.isCorrect) {
+      return <h2>You were correct! :D</h2>
     } else {
-      return <h3>'Good try, but not quite right :('</h3>
+      return <h2>Good try, but not quite right :(</h2>
     }
   }
 
@@ -25,13 +24,11 @@ class AnswerFeedback extends React.Component {
     console.log(this.context);
     return (
       <section id="feedback">
-        <p>Results for our next word: {this.context.nextWord}</p>
-        <div className="AnswerFeedback">
+        <div className="DisplayFeedback">
           {this.renderMessage()}
-          <p>The correct translation for '{this.context.nextWord}' was '{this.context.answer}' and you chose '{this.context.guess}'!</p>
-         <p className="total-score">Your total score is: {this.context.totalScore}</p>
-         <Button onClick={this.handleClick}>Try another word!</Button>
-       </div>
+          <p>The correct translation for {this.context.prevWord} was {this.context.answer} and you chose {this.context.guess}!</p>
+          <Button onClick={this.handleClick}>Try another word!</Button>
+        </div>
     </section>
     );
   }

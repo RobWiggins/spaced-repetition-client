@@ -1,0 +1,28 @@
+#learning-container section h3, #learning-container p {
+  display: inline-block;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+#submit-form {
+  width: fit-content;
+  display: inline-block;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+#submit-form label {
+  display: block;
+}
+
+#submit-form input {
+  margin-top: 10px;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+#submit-form button {
+  display: block;
+  margin-left: 50%;
+  transform: translate(-50%);
+}

@@ -4,6 +4,7 @@ import LanguageService from '../../services/language-api-service'
 import LearningContext from '../../contexts/LearningContext';
 import config from '../../config.js'
 import AnswerFeedback from '../../components/AnswerFeedback/AnswerFeedback'
+import './LearningRoute.css';
 
 
 class LearningRoute extends Component {
@@ -17,6 +18,7 @@ class LearningRoute extends Component {
     LanguageService.submitGuess(guess)
     .then(guessRes => {
       console.log(guessRes);
+      this.context.setPrevWord(this.context.nextWord);
       this.context.clearError();
       this.context.setTotalScore(guessRes.totalScore);
       this.context.setWordCorrectCount(guessRes.wordCorrectCount);
@@ -24,7 +26,6 @@ class LearningRoute extends Component {
       this.context.setNextWord(guessRes.nextWord)
       this.context.setAnswer(guessRes.answer);
       this.context.setGuess(guess);
-      // this.context.setPrevWord('HOW TO SET THIS? Implement.')
       this.context.setIsCorrect(guessRes.isCorrect);
       this.context.setIsResultDisplayed(true);
     })
@@ -70,7 +71,9 @@ class LearningRoute extends Component {
           <button type="submit">Submit your answer</button>
         </form> 
         </section> : <AnswerFeedback /> )}
-      <p className="DisplayScore">Your total score is: {this.context.totalScore}</p>
+      <div  className="DisplayScore">
+        <p className="total-score">Your total score is: {this.context.totalScore}</p>
+      </div>
       <p>You have answered this word correctly {this.context.wordCorrectCount} times.</p>
       <p>You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>
 
