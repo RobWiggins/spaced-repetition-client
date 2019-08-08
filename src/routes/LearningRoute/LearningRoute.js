@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TokenService from '../../services/token-service.js'
 import LanguageService from '../../services/language-api-service'
-import LanguageContext from '../../contexts/LanguageContext';
+import LearningContext from '../../contexts/LearningContext';
 import config from '../../config.js'
 
 
@@ -11,10 +11,10 @@ class LearningRoute extends Component {
     currHead: {},
   }
 
-  static contextType = LanguageContext;
+  static contextType = LearningContext;
 
   componentDidMount() {
-    LanguageService.getHead()
+    LanguageService.getHead() // only call once, used to set head of list aka first word asked
       .then(data => {
         if (!data) {
           console.error(data);
@@ -27,6 +27,8 @@ class LearningRoute extends Component {
         console.error(e);
       })
   }
+
+  // TODO METHOD TO update word to next word by referencing this.context.nextWord etc. 
 
   handleSubmit = (e) => {
     e.preventDefault();

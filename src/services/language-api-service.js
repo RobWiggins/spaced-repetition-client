@@ -1,5 +1,6 @@
 import config from '../config';
 import TokenService from './token-service'
+import LearningContext from '../contexts/LearningContext'
 
 const LanguageApiService = {
   getWords() {
@@ -47,14 +48,22 @@ const LanguageApiService = {
     })
       .then(res => {
         if (!res.ok) {
-          console.log('res error: ', res)
+          LearningContext.setError('Oops! Something went wrong while processing your guess.')
           return res.json().then(e => Promise.reject(e.error))
         }
         console.log('res: ', res);
         return res.json()
-      }).then(data => {
-        console.log('data: ', data)
-      }).catch(e => console.error(e)) 
+      }).then(guessRes => {
+        LearningContext.clearError();
+        LearningContext.setTotalScore(guessRes.totalScore);
+        LearningContext.setWordCorrectCount(guessRes.wordCorrectCount);
+        LearningContext.setWordIncorrectCount(guessRes.wordIncorrectCount);
+        LearningContext.setNextWord(guessRes.nextWord)
+        LearningContext.setAnswer(guessRes.answer);
+        LearningContext.setGuess(guess);
+        LearningContext.setPrevWord('HOW TO SET THIS? Implement.')
+        LearningContext.setIsCorrect(guessRes.isCorrect)
+      }).catch(e => console.error('guess processing failure.'))
       
   }
 }

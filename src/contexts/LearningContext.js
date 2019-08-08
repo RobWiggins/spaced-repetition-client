@@ -62,6 +62,7 @@ export class LearningProvider extends Component {
     this.setState({ guess })
   }
   
+  // TODO what is this needed for?
   setPrevWord = prevWord => {
     this.setState({ prevWord })
   }
