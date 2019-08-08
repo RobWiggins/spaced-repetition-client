@@ -55,7 +55,7 @@ class LearningRoute extends Component {
       <section id="learning-container">
       {(!this.context.isResultDisplayed ?  
       <section>
-        <h2>Translate the Word:</h2>
+        <h2>Translate the word:</h2>
         <h3>{this.context.nextWord}</h3>
         <form htmlFor='guessForm'
           id="submit-form"
@@ -64,13 +64,14 @@ class LearningRoute extends Component {
             this.handleSubmit(e.target.guessForm.value);
           }}
          >
-          <input type="text" name='guessForm' id="guessForm" required></input>
-          <button>Submit Guess</button>
+           <label htmlFor="learn-guess-input">What's the translation for this word?</label>
+          <input type="text" name='guessForm' id="learn-guess-input" required></input>
+          <button type="submit">Submit your answer</button>
         </form> 
         </section> : <AnswerFeedback /> )}
-      <p>total score: {this.context.totalScore}</p>
-      <p>word guessed correctly: {this.context.wordCorrectCount}</p>
-      <p>word guessed incorrectly: {this.context.wordIncorrectCount}</p>
+      <p className="DisplayScore">Your total score is: {this.context.totalScore}</p>
+      <p>You have answered this word correctly {this.context.wordCorrectCount} times.</p>
+      <p>You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>
 
       
       </section>
