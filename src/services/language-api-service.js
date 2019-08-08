@@ -32,27 +32,28 @@ const LanguageApiService = {
   },
   submitGuess(guess) {
     console.log('fetching guess: ', guess)
-    let body = JSON.stringify(
+    const body = JSON.stringify(
       { 
-        'guess': guess 
+        guess: guess 
       });
 
     return fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {
-        'authorization': `Bearer ${TokenService.getAuthToken()}`
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json'
       },
       body: body,
     })
       .then(res => {
         if (!res.ok) {
           console.log('res error: ', res)
-          return res.json().then(e => Promise.reject(e))
+          return res.json().then(e => Promise.reject(e.error))
         }
         console.log('res: ', res);
         return res.json()
       }).then(data => {
-        // console.log('data: ', data)
+        console.log('data: ', data)
       }).catch(e => console.error(e)) 
       
   }
