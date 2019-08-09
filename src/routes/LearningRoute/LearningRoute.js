@@ -56,9 +56,9 @@ class LearningRoute extends Component {
     return (
       <section id="learning-container">
       {(!this.context.isResultDisplayed ?  
-      <section>
+      <section role="form">
         <div className="translate-container">
-          <h2>Translate the word:</h2><span>{this.context.nextWord}</span>
+          <h2>Translate the word:</h2><span lang="fr">{this.context.nextWord}</span>
         </div>
         <form htmlFor='guessForm'
           id="submit-form"

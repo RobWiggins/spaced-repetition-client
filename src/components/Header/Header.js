@@ -14,7 +14,7 @@ class Header extends Component {
   renderLogoutLink() {
     return (
       <div>
-        <nav>
+        <nav role="navigation">
         <span>
           {this.context.user.name}
         </span>
@@ -31,7 +31,7 @@ class Header extends Component {
 
   renderLoginLink() {
     return (
-      <nav>
+      <nav role="navigation">
         <Link className='link' to='/register'>Sign up</Link>
         {' '}
         <Link className='link' to='/login'>Login</Link>
@@ -41,7 +41,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header>
+      <header role="banner">
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

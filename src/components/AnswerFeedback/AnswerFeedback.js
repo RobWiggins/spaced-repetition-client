@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '../Button/Button';
-import LanguageContext from '../../contexts/LanguageContext';
 import LearningContext from '../../contexts/LearningContext';
 import './AnswerFeedback.css';
 
@@ -21,12 +20,11 @@ class AnswerFeedback extends React.Component {
   }
 
   render() {
-    console.log(this.context);
     return (
       <section id="feedback">
         <div className="DisplayFeedback">
           {this.renderMessage()}
-          <p>The correct translation for {this.context.prevWord} was {this.context.answer} and you chose {this.context.guess}!</p>
+          <p>The correct translation for <span en="fr">{this.context.prevWord}</span> was {this.context.answer} and you chose {this.context.guess}!</p>
           <Button onClick={this.handleClick}>Try another word!</Button>
         </div>
     </section>

@@ -18,7 +18,7 @@ class DashboardRoute extends Component {
 
   render() {
     return (
-      <section>
+      <section role="wordlist">
         <WordList startLearning={this.startLearning}/>
       </section>
     );
