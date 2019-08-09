@@ -5,7 +5,7 @@ import LearningContext from '../contexts/LearningContext'
 const LanguageApiService = {
   getWords() {
     console.log('Getting words');
-    return fetch(`${config.API_ENDPOINT}/language`, {
+    return fetch(`${config.API_ENDPOINT}/api/language`, {
       method: 'GET',
       headers: {
         'authorization': `Bearer ${TokenService.getAuthToken()}`
@@ -19,7 +19,7 @@ const LanguageApiService = {
   },
   getHead() {
     console.log('Getting words');
-    return fetch(`${config.API_ENDPOINT}/language/head`, {
+    return fetch(`${config.API_ENDPOINT}/api/language/head`, {
       method: 'GET',
       headers: {
         'authorization': `Bearer ${TokenService.getAuthToken()}`
@@ -38,7 +38,7 @@ const LanguageApiService = {
         guess: guess 
       });
 
-    return fetch(`${config.API_ENDPOINT}/language/guess`, {
+    return fetch(`${config.API_ENDPOINT}/api/language/guess`, {
       method: 'POST',
       headers: {
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
