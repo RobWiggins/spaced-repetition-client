@@ -87,4 +87,3 @@ This will save video recordings of the test runs in the directory ./cypress/vide
 - Robert Wiggins 
 - Michael Romero
 - tomatou (github) - authentication starter code
-- Jonathan Lassen - authentication starter code
