@@ -1,5 +1,19 @@
+main {
+  display: flex;
+  justify-content: center;
+}
+
 h2, .desc {
   display: inline-block;
   margin-left: 50%;
   transform: translate(-50%);
+}
+
+body {
+  background: url('/static/leonard-cotte-R5scocnOOdM-unsplash.jpg') no-repeat center center fixed;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Nunito', 'Open Sans' ,'Roboto', 'sans-serif';
 }
