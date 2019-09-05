@@ -71,12 +71,10 @@ class LearningRoute extends Component {
         </form> 
         </section> : <AnswerFeedback /> )}
       <div  className="DisplayScore">
-        <p className="total-score">Your total score is: {this.context.totalScore}</p>
+        <p className="total-score word-score-keeper">Your total score is: {this.context.totalScore}</p>
       </div>
-      <p>You have answered this word correctly {this.context.wordCorrectCount} times.</p>
-      <p>You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>
-
-      
+      <p className="word-score-keeper">You have answered this word correctly {this.context.wordCorrectCount} times.</p>
+      <p className="word-score-keeper">You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>
       </section>
     );
   }
