@@ -1,9 +1,11 @@
-.WordList h3, .WordList a, .WordList .total-correct {
+
+
+.wordlist h3, .wordlist a, .wordlist .total-correct {
   display: inline-block;
   margin-left: 50%;
   transform: translate(-50%);
 }
 
-.WordList ul {
+.wordlist ul {
   list-style-type: none;
 }

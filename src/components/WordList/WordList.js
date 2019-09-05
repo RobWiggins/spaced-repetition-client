@@ -29,7 +29,7 @@ class WordList extends React.Component {
 
   render() {
     return (
-      <div className="WordList">
+      <div className="wordlist">
         <h2>Start Practicing {this.context.language.name}</h2>
         <h3>Words to practice</h3>
         {this.renderWordList()}

@@ -15,7 +15,7 @@ class RegistrationRoute extends Component {
 
   render() {
     return (
-      <section className="register-container">
+      <section className="account-access-container">
         <p className="desc">
           Practice learning a language with the spaced repetition revision technique.
         </p>

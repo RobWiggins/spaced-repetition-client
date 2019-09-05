@@ -1,4 +1,4 @@
-.register-container {
+.account-access-container {
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -10,11 +10,12 @@
   font-weight: 500;
   justify-items: center;
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .call-action-txt {
   font-size: 2em;
-  margin: 20px;
   margin-left: 50%;
 }
 

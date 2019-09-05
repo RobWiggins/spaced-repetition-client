@@ -17,8 +17,8 @@ class LoginRoute extends Component {
 
   render() {
     return (
-      <section>
-        <h2>Login</h2>
+      <section className="account-access-container">
+        <h2 className="call-action-txt">Login</h2>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}
         />

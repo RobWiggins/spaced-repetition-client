@@ -1,3 +1,8 @@
+#learning-container {
+  background-color: #00274c;
+  color: ghostwhite;
+}
+
 #learning-container p {
   display: inline-block;
   margin-left: 50%;

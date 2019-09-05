@@ -49,8 +49,6 @@ class LearningRoute extends Component {
       })
   }
 
-  // TODO METHOD TO update word to next word by referencing this.context.nextWord etc. 
-
   render() {
     console.log(this.context);
     return (
