@@ -14,10 +14,8 @@ class LearningRoute extends Component {
 
   /* calls api service, then setting context state */
   handleSubmit(guess) {
-    console.log('guess: ', guess);
     LanguageService.submitGuess(guess)
     .then(guessRes => {
-      console.log(guessRes);
       this.context.setPrevWord(this.context.nextWord);
       this.context.clearError();
       this.context.setTotalScore(guessRes.totalScore);
@@ -38,7 +36,6 @@ class LearningRoute extends Component {
           console.error(data);
           throw new Error('Oh no! Something went wrong with getting next word.')
         }
-        console.log('data did mount: ', data);
         this.context.setNextWord(data.nextWord)
         this.context.setTotalScore(data.totalScore);
         this.context.setWordCorrectCount(data.wordCorrectCount);
@@ -50,7 +47,6 @@ class LearningRoute extends Component {
   }
 
   render() {
-    console.log(this.context);
     return (
       <section id="learning-container">
       {(!this.context.isResultDisplayed ?  

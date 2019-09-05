@@ -21,7 +21,6 @@ class AnswerFeedback extends React.Component {
   }
 
   render() {
-    console.log(this.context);
     return (
       <section id="feedback">
         <div className="DisplayFeedback">
