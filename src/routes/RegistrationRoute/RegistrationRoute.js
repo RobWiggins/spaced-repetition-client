@@ -17,9 +17,9 @@ class RegistrationRoute extends Component {
     return (
       <section className="register-container">
         <p className="desc">
-          Practice learning a language with the spaced reptition revision technique.
+          Practice learning a language with the spaced repetition revision technique.
         </p>
-        <h2>Sign up</h2>
+        <h2 className="call-action-txt">Sign up</h2>
         <RegistrationForm
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />
