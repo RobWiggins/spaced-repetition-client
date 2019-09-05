@@ -3,11 +3,11 @@ main {
   justify-content: center;
 }
 
-h2, .desc {
+/* h2, .desc {
   display: inline-block;
   margin-left: 50%;
   transform: translate(-50%);
-}
+} */
 
 body {
   background: url('/static/leonard-cotte-R5scocnOOdM-unsplash.jpg') no-repeat center center fixed;

@@ -13,33 +13,69 @@
   margin: 20px;
 }
 
+.translate-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .translate-container span {
   font-size: 2rem;
   margin-bottom: 20px;
-  display: inline-block;
-  margin-left: 50%;
-  transform: translate(-50%);
 }
 
 #submit-form {
-  display: inline-block;
-  margin-left: 50%;
-  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #submit-form label {
   display: block;
+  margin: 5px;
 }
 
 #submit-form input {
   margin-top: 10px;
-  margin-left: 50%;
   border: 1px solid gray;
-  transform: translate(-50%);
 }
 
 #submit-form button {
-  display: block;
-  margin-left: 50%;
-  transform: translate(-50%);
+  display: flex;
+  margin: 15px;
+}
+
+.instructions-header {
+  text-align: center;
+  /* margin: auto; */
+}
+
+@media only screen and (min-width: 600px) {
+  #learning-container {
+    font-size: 1.17em;
+    margin-top: 0;
+  }
+
+  #learning-container p, #learning-container h4 {
+    margin: 4px;
+  }
+
+  #learning-container h2 {
+    width: 300px;
+  }
+
+  #learning-container ul {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  #learning-container button {
+    margin: 15px;
+  }
+
+  .word-score-keeper {
+    padding: 10px;
+  }
+
 }

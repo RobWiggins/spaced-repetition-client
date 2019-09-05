@@ -32,7 +32,7 @@ class WordList extends React.Component {
     return (
       <div className="wordlist">
         <h2>Start Practicing {this.context.language.name}</h2>
-        <h3>Words to practice</h3>
+        <h3 className="list-summary">Words to practice</h3>
         {this.renderWordList()}
         <Button><Link to='/learn'>
           Start practicing
