@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import TokenService from '../../services/token-service.js'
 import LanguageService from '../../services/language-api-service'
 import LearningContext from '../../contexts/LearningContext';
-import config from '../../config.js'
 import AnswerFeedback from '../../components/AnswerFeedback/AnswerFeedback'
 import './LearningRoute.css';
 

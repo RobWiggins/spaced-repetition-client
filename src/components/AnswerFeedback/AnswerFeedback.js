@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '../Button/Button';
-import LanguageContext from '../../contexts/LanguageContext';
 import LearningContext from '../../contexts/LearningContext';
 import './AnswerFeedback.css';
 
