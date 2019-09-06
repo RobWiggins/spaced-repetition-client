@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import TokenService from '../../services/token-service.js'
 import LanguageService from '../../services/language-api-service'
 import LearningContext from '../../contexts/LearningContext';
-import config from '../../config.js'
 import AnswerFeedback from '../../components/AnswerFeedback/AnswerFeedback'
 import './LearningRoute.css';
 
@@ -14,10 +12,8 @@ class LearningRoute extends Component {
 
   /* calls api service, then setting context state */
   handleSubmit(guess) {
-    console.log('guess: ', guess);
     LanguageService.submitGuess(guess)
     .then(guessRes => {
-      console.log(guessRes);
       this.context.setPrevWord(this.context.nextWord);
       this.context.clearError();
       this.context.setTotalScore(guessRes.totalScore);
@@ -38,7 +34,6 @@ class LearningRoute extends Component {
           console.error(data);
           throw new Error('Oh no! Something went wrong with getting next word.')
         }
-        console.log('data did mount: ', data);
         this.context.setNextWord(data.nextWord)
         this.context.setTotalScore(data.totalScore);
         this.context.setWordCorrectCount(data.wordCorrectCount);
@@ -49,16 +44,13 @@ class LearningRoute extends Component {
       })
   }
 
-  // TODO METHOD TO update word to next word by referencing this.context.nextWord etc. 
-
   render() {
-    console.log(this.context);
     return (
       <section id="learning-container">
       {(!this.context.isResultDisplayed ?  
       <section role="form">
         <div className="translate-container">
-          <h2>Translate the word:</h2><span lang="fr">{this.context.nextWord}</span>
+          <h2 className="instructions-header">Translate the word:</h2><span>{this.context.nextWord}</span>
         </div>
         <form htmlFor='guessForm'
           id="submit-form"
@@ -73,12 +65,10 @@ class LearningRoute extends Component {
         </form> 
         </section> : <AnswerFeedback /> )}
       <div  className="DisplayScore">
-        <p className="total-score">Your total score is: {this.context.totalScore}</p>
+        <p className="total-score word-score-keeper">Your total score is: {this.context.totalScore}</p>
       </div>
-      <p>You have answered this word correctly {this.context.wordCorrectCount} times.</p>
-      <p>You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>
-
-      
+      <p className="word-score-keeper">You have answered this word correctly {this.context.wordCorrectCount} times.</p>
+      <p className="word-score-keeper">You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>
       </section>
     );
   }

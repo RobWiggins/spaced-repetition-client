@@ -15,9 +15,9 @@
   width: 90px;
 }
 
-form button {
-  padding: 10px;
+.LoginForm > button {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 30px;
   margin-top: 20px;
-  margin-left: 50%;
-  transform: translate(-50%);
 }

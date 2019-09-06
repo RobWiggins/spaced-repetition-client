@@ -1,9 +1,36 @@
-.WordList h3, .WordList a, .WordList .total-correct {
-  display: inline-block;
-  margin-left: 50%;
-  transform: translate(-50%);
+.wordlist {
+  text-align: center;
+  margin: auto;
 }
 
-.WordList ul {
+.wordlist {
+  margin: 15px;
+}
+
+.list-summary {
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+
+.wordlist ul {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.wordlist a {
+  text-decoration: none;
+  color: black;
+}
+
+.wordlist button {
+  text-align: center;
+  margin: auto;
+}
+
+.wordlist h2 {
+  width: 245px;
+  text-align: center;
+  margin: auto;
 }

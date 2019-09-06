@@ -46,7 +46,7 @@ class Header extends Component {
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
         <h1>
-          <Link to='/'>
+          <Link to='/' className="app-title">
             Spaced repetition
           </Link>
         </h1>

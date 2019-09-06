@@ -4,7 +4,6 @@ import LearningContext from '../contexts/LearningContext'
 
 const LanguageApiService = {
   getWords() {
-    console.log('Getting words');
     return fetch(`${config.API_ENDPOINT}/api/language`, {
       method: 'GET',
       headers: {
@@ -18,7 +17,6 @@ const LanguageApiService = {
       )
   },
   getHead() {
-    console.log('Getting words');
     return fetch(`${config.API_ENDPOINT}/api/language/head`, {
       method: 'GET',
       headers: {
@@ -32,7 +30,6 @@ const LanguageApiService = {
       )
   },
   submitGuess(guess) {
-    console.log('fetching guess: ', guess)
     const body = JSON.stringify(
       { 
         guess: guess 
@@ -51,7 +48,6 @@ const LanguageApiService = {
           LearningContext.setError('Oops! Something went wrong while processing your guess.')
           return res.json().then(e => Promise.reject(e.error))
         }
-        console.log('res: ', res);
         return res.json()
       })
       .catch(e => console.error('guess fetch failure.'))

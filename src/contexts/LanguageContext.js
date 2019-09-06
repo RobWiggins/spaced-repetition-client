@@ -20,12 +20,10 @@ export class LanguageProvider extends Component {
   }
 
   setLanguage = (lang) => {
-    console.log(lang);
     this.setState({language: lang});
   }
 
   setWords = (words) => {
-    console.log(words);
     this.setState({ words });
   }
 
