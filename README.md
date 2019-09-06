@@ -8,10 +8,15 @@ The home dashboard shows your language, words to learn, and score for each word.
 
 ### Live Demo: https://spaced-repetition.michaelromero09.now.sh
 
-![Register page](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/register.jpg "Register page")
-![Learning dashboard](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/dashboard.jpg "learning dashboard")
-![Word translation question page](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/apprende_word.jpg "Word translation question page")
-![Answer result feedback page](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/answer_result.jpg "Answer result feedback page")
+![Register page](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/register.jpg "Register page")  
+  
+![Learning dashboard](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/dashboard.jpg "learning dashboard")  
+  
+![Word translation question page](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/apprende_word.jpg "Word translation question page")  
+  
+![Answer result feedback page](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/answer_result.jpg "Answer result feedback page")  
+  
+  
 
 
 ## Getting Started
