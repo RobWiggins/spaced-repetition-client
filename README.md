@@ -38,8 +38,8 @@ The page will reload if you make edits.
 You will also see any lint errors in the console.
 
 `npm test`
-Launches the test runner in the interactive watch mode.
-See the section about running tests for more information.
+Launches the test runner in the interactive watch mode. However, this app is currently configured to use Cypress for testing.
+See the section about running tests on Cypress for more information.
 
 `npm run build`
 Builds the app for production to the build folder.
