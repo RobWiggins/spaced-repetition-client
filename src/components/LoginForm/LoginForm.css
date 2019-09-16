@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.login-err {
+  color: red;
+  font-weight: bold;
+}
+
 .input {
   display: flex;
   align-items: center;
