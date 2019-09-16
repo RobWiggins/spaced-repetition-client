@@ -41,7 +41,7 @@ class RegistrationForm extends Component {
     const { error } = this.state
     return (
       <form className="register-form" onSubmit={this.handleSubmit}>
-        <div role="alert">{error && <p>{error}</p>}</div>
+        <div role="alert" className="reg-error">{error && <p>{error}</p>}</div>
         <div className="input">
           <Label htmlFor="registration-name-input">
             Enter your name
