@@ -6,8 +6,17 @@ As a prospective user, you can register an account so that you can login and use
 
 The home dashboard shows your language, words to learn, and score for each word. The learning page asks you to input the translation of a word, which will subsequently give you feedback on whether you were correct. The words that you miss more frequently are shown more frequently. Upon mastery of each word, each word will get asked progressively less often.
 
-### Live Demo: https://spaced-repetition.michaelromero09.now.sh
+### Live Demo: https://spacedrepetitionlearn.now.sh
 
+![Register page](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/register.jpg "Register page")  
+  
+![Learning dashboard](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/dashboard.jpg "learning dashboard")  
+  
+![Word translation question page](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/apprende_word.jpg "Word translation question page")  
+  
+![Answer result feedback page](https://github.com/RobertWiggins/spaced-repetition-client/blob/orphan-assets/screenshots/answer_result.jpg "Answer result feedback page")  
+  
+  
 ## Getting Started
 These instructions will get you a copy of the front-end project up and running on your local machine for development and testing purposes. This client runs locally in conjunction with the Spaced-Repetition server, which can be found at (https://github.com/thinkful-ei-dragonfly/spaced-repetition-api-rob-michaelR).
 
@@ -27,8 +36,8 @@ The page will reload if you make edits.
 You will also see any lint errors in the console.
 
 `npm test`
-Launches the test runner in the interactive watch mode.
-See the section about running tests for more information.
+Launches the test runner in the interactive watch mode. However, this app is currently configured to use Cypress for testing.
+See the section about running tests on Cypress for more information.
 
 `npm run build`
 Builds the app for production to the build folder.
