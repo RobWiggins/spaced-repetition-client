@@ -18,12 +18,19 @@ export default class App extends Component {
     console.error(error)
     return { hasError: true }
   }
+  
+  // TODO does not cover all the way to bottom
+  backgroundStyle = {
+    backgroundImage:
+      'url("/static/leonard-cotte-R5scocnOOdM-unsplash.jpg")',
+    backgroundSize: 'cover',
+   };
 
   render() {
     const { hasError } = this.state
     return (
       <LanguageProvider>
-        <div className='App'>
+        <div className='App' style={this.backgroundStyle}>
           <Header />
           <main role="main">
             {hasError && (
