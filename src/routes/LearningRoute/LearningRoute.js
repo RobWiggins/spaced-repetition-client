@@ -67,8 +67,12 @@ class LearningRoute extends Component {
       <div  className="DisplayScore">
         <p className="total-score word-score-keeper">Your total score is: {this.context.totalScore}</p>
       </div>
-      <p className="word-score-keeper">You have answered this word correctly {this.context.wordCorrectCount} times.</p>
-      <p className="word-score-keeper">You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>
+      {!this.context.isResultDisplayed && (
+        <>
+          <p className="word-score-keeper">You have answered this word correctly {this.context.wordCorrectCount} times.</p>
+          <p className="word-score-keeper">You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>
+        </>
+      )}
       </section>
     );
   }
