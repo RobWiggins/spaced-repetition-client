@@ -17,3 +17,12 @@ body {
   background-size: cover;
   font-family: 'Nunito', 'Open Sans' ,'Roboto', 'sans-serif';
 }
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
