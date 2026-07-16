@@ -19,7 +19,6 @@ export default class App extends Component {
     return { hasError: true }
   }
   
-  // TODO does not cover all the way to bottom
   backgroundStyle = {
     backgroundImage:
       'url("/static/leonard-cotte-R5scocnOOdM-unsplash.jpg")',
