@@ -1,36 +1,98 @@
 .wordlist {
-  text-align: center;
-  margin: auto;
+  width: 100%;
+  padding: clamp(20px, 4vw, 34px);
 }
 
-.wordlist {
-  margin: 15px;
+.dashboard-hero {
+  display: grid;
+  gap: 14px;
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid rgba(49, 87, 201, 0.14);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(49, 87, 201, 0.08), rgba(15, 159, 143, 0.08)),
+    rgba(255, 255, 255, 0.58);
+}
+
+.dashboard-hero h2 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.98;
+}
+
+.dashboard-hero p {
+  max-width: 660px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.65;
+}
+
+.dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.start-practice-btn {
+  min-width: 190px;
+}
+
+.total-correct,
+.word-count {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(49, 87, 201, 0.14);
+  border-radius: 999px;
+  color: var(--brand-dark);
+  background: rgba(49, 87, 201, 0.09);
+  font-size: 0.92rem;
+  font-weight: 850;
+}
+
+.wordlist-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 28px 0 16px;
 }
 
 .list-summary {
-  margin-bottom: 0px;
-  margin-top: 15px;
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 900;
 }
 
-.wordlist ul {
+.wordlist-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+}
+
+.wordlist-item {
+  min-width: 0;
 }
 
 .wordlist a {
+  color: inherit;
   text-decoration: none;
-  color: black;
 }
 
-.wordlist button {
-  text-align: center;
-  margin: auto;
-}
-
-.wordlist h2 {
-  width: 245px;
-  text-align: center;
-  margin: auto;
+@media only screen and (min-width: 760px) {
+  .wordlist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

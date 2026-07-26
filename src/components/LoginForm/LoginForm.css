@@ -1,28 +1,32 @@
 .LoginForm {
+  display: grid;
+  gap: 18px;
   width: 100%;
+  margin-top: 28px;
 }
 
 .login-err {
-  color: red;
-  font-weight: bold;
+  min-height: 0;
+  color: var(--danger);
+  font-weight: 800;
+}
+
+.login-err p {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(211, 72, 95, 0.22);
+  border-radius: var(--radius);
+  background: rgba(211, 72, 95, 0.08);
 }
 
 .input {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
 }
 
-.input label{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: inline-block;
-  width: 90px;
-}
-
-.LoginForm > button {
-  text-align: center;
-  margin: auto;
-  margin-bottom: 30px;
-  margin-top: 20px;
+.LoginForm > .Button {
+  justify-self: center;
+  margin-top: 6px;
 }

@@ -1,70 +1,40 @@
-.account-access-container {
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  min-width: 300px;
-  max-width: 600px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  font-size: 1.2em;
-  font-weight: 500;
-  justify-items: center;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 30px;
+.register-form {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+  margin-top: 28px;
 }
 
 .reg-err {
-  color: red;
-  font-weight: bold;
+  min-height: 0;
+  color: var(--danger);
+  font-weight: 800;
 }
 
-.call-action-txt {
-  font-size: 2em;
-  margin-left: 50%;
+.reg-err p {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(211, 72, 95, 0.22);
+  border-radius: var(--radius);
+  background: rgba(211, 72, 95, 0.08);
 }
 
-.register-form {
-  width: 100%;
-  padding-bottom: 20px;
-}
-
-.desc {
+.form-actions {
   display: flex;
-  width: 70%;
-  min-width: 250px;
-}
-
-.input {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
 }
 
-.input label{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 15px;
-  display: inline-block;
-  width: 90px;
+.has-account-btn {
+  border: 1px solid rgba(54, 66, 92, 0.16);
+  color: var(--brand-dark);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: none;
 }
 
-footer button {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 20px;
-}
-
-.has-account-btn > a {
+.login-btn-link {
+  color: inherit;
   text-decoration: none;
-  color: black;
-}
-
-footer a {
-  display: inline-block;
-  margin-left: 50%;
-  transform: translate(-50%);
 }

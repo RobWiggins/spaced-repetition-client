@@ -18,12 +18,11 @@ export default class App extends Component {
     console.error(error)
     return { hasError: true }
   }
-  
+
   backgroundStyle = {
     backgroundImage:
-      'url("/static/leonard-cotte-R5scocnOOdM-unsplash.jpg")',
-    backgroundSize: 'cover',
-   };
+      'linear-gradient(115deg, rgba(245, 241, 232, 0.92), rgba(245, 241, 232, 0.76)), url("/static/leonard-cotte-R5scocnOOdM-unsplash.jpg")',
+  }
 
   render() {
     const { hasError } = this.state
@@ -31,9 +30,9 @@ export default class App extends Component {
       <LanguageProvider>
         <div className='App' style={this.backgroundStyle}>
           <Header />
-          <main role="main">
+          <main className="app-main" role="main">
             {hasError && (
-              <p>There was an error! Oh no!</p>
+              <p className="app-error">There was an error. Please try again.</p>
             )}
             <Switch>
               <PrivateRoute

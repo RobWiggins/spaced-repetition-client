@@ -48,9 +48,11 @@ class LearningRoute extends Component {
     return (
       <section id="learning-container">
       {(!this.context.isResultDisplayed ?  
-      <section role="form">
+      <section className="learning-card" role="form">
         <div className="translate-container">
-          <h2 className="instructions-header">Translate the word:</h2><span>{this.context.nextWord}</span>
+          <span className="eyebrow">Active prompt</span>
+          <h2 className="instructions-header">Translate the word</h2>
+          <span className="prompt-word">{this.context.nextWord}</span>
         </div>
         <form htmlFor='guessForm'
           id="submit-form"
@@ -59,19 +61,19 @@ class LearningRoute extends Component {
             this.handleSubmit(e.target.guessForm.value);
           }}
          >
-           <label htmlFor="learn-guess-input">What's the translation for this word?</label>
-          <input type="text" name='guessForm' id="learn-guess-input" required></input>
+           <label htmlFor="learn-guess-input">What&apos;s the translation?</label>
+          <input type="text" name='guessForm' id="learn-guess-input" required autoComplete="off"></input>
           <button type="submit">Submit your answer</button>
         </form> 
         </section> : <AnswerFeedback /> )}
-      <div  className="DisplayScore">
-        <p className="total-score word-score-keeper">Your total score is: {this.context.totalScore}</p>
+      <div className="DisplayScore">
+        <p className="total-score word-score-keeper"><span>{this.context.totalScore}</span>Total score</p>
       </div>
       {!this.context.isResultDisplayed && (
-        <>
-          <p className="word-score-keeper">You have answered this word correctly {this.context.wordCorrectCount} times.</p>
-          <p className="word-score-keeper">You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>
-        </>
+        <div className="word-session-stats">
+          <p className="word-score-keeper"><span>{this.context.wordCorrectCount}</span>Correct for this word</p>
+          <p className="word-score-keeper"><span>{this.context.wordIncorrectCount}</span>Missed for this word</p>
+        </div>
       )}
       </section>
     );

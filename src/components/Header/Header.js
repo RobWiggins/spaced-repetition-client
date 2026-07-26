@@ -13,43 +13,44 @@ class Header extends Component {
 
   renderLogoutLink() {
     return (
-      <div>
-        <nav role="navigation">
-        <span>
-          {this.context.user.name}
+      <nav className="header-nav" role="navigation" aria-label="Account">
+        <span className="user-chip">
+          {this.context.user.name || 'Learner'}
         </span>
           <Link
-            className="logout-link"
+            className="nav-link logout-link"
             onClick={this.handleLogoutClick}
             to='/login'>
             Logout
           </Link>
-        </nav>
-      </div>
+      </nav>
     )
   }
 
   renderLoginLink() {
     return (
-      <nav role="navigation">
-        <Link className='link' to='/register'>Sign up</Link>
-        {' '}
-        <Link className='link' to='/login'>Login</Link>
+      <nav className="header-nav" role="navigation" aria-label="Account">
+        <Link className='nav-link' to='/login'>Login</Link>
+        <Link className='nav-link nav-link-primary' to='/register'>Sign up</Link>
       </nav>
     )
   }
 
   render() {
     return (
-      <header role="banner">
-        {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()}
-        <h1>
-          <Link to='/' className="app-title">
-            Spaced repetition
+      <header className="site-header" role="banner">
+        <div className="header-inner">
+          <Link to='/' className="app-title" aria-label="Spaced repetition home">
+            <span className="brand-mark">SR</span>
+            <span className="brand-copy">
+              <span className="brand-name">Spaced repetition</span>
+              <span className="brand-tagline">Practice that sticks</span>
+            </span>
           </Link>
-        </h1>
+          {TokenService.hasAuthToken()
+            ? this.renderLogoutLink()
+            : this.renderLoginLink()}
+        </div>
       </header>
     );
   }

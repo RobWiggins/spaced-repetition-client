@@ -1,28 +1,97 @@
-main {
-  display: flex;
-  justify-content: center;
-}
-
-.desc, .call-action-txt {
-  text-align: center;
-  margin: auto;
-  padding: 15px;
-  margin-top: 10px;
-}
-
-body {
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Nunito', 'Open Sans' ,'Roboto', 'sans-serif';
-}
-
 .App {
+  position: relative;
   min-height: 100vh;
   width: 100%;
-
-  background-size: cover;
+  overflow-x: hidden;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App::before {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top left, rgba(49, 87, 201, 0.18), transparent 34rem),
+    radial-gradient(circle at bottom right, rgba(15, 159, 143, 0.16), transparent 30rem);
+  content: "";
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  width: min(1120px, calc(100% - 32px));
+  min-height: calc(100vh - 116px);
+  margin: 0 auto;
+  padding: 28px 0 64px;
+}
+
+.app-error,
+.not-found-card {
+  width: min(100%, 560px);
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: rgba(255, 250, 241, 0.9);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.not-found-card h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.not-found-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.desc {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.call-action-txt {
+  margin: 10px auto 10px;
+  color: var(--ink);
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: 850;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.account-access-container,
+#learning-container {
+  width: min(100%, 920px);
+  border: 1px solid rgba(54, 66, 92, 0.14);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: rgba(255, 250, 241, 0.9);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.account-access-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 640px;
+  padding: clamp(28px, 6vw, 48px);
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .app-main {
+    width: min(1120px, calc(100% - 56px));
+    padding-top: 42px;
+  }
 }

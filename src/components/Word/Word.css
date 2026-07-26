@@ -1,23 +1,95 @@
 .Word {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  min-height: 96px;
+  padding: 16px;
+  border: 1px solid rgba(54, 66, 92, 0.12);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 24px rgba(32, 45, 73, 0.08);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
-.Word p, .Word h4 {
-  padding: 10px;
-  margin: 0;
+.Word:hover {
+  border-color: rgba(49, 87, 201, 0.24);
+  box-shadow: 0 16px 32px rgba(32, 45, 73, 0.12);
+  transform: translateY(-1px);
 }
 
-
-/* .Word {
-  width: 100%;
+.word-token {
   display: flex;
   align-items: center;
-  justify-content: center;
+  min-width: 0;
 }
 
-.Word p {
-  display: inline-block;
-  margin-left: 10px;
-} */
+.word-letter {
+  display: inline-flex;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  font-weight: 900;
+}
+
+.Word h4 {
+  margin: 0 0 0 12px;
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.word-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.word-stat {
+  display: grid;
+  min-width: 76px;
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  color: var(--muted);
+  background: rgba(239, 231, 216, 0.6);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.word-stat span {
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+.word-stat-correct span {
+  color: var(--success);
+}
+
+.word-stat-incorrect span {
+  color: var(--warning);
+}
+
+@media only screen and (max-width: 520px) {
+  .Word {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .word-stats {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}

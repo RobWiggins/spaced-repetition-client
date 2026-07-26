@@ -20,25 +20,48 @@ class WordList extends React.Component {
   }
 
   renderWordList() {
-    const words = this.context.words.map((word, i) => <li key={i}><Word word={word}/></li>)
+    const words = this.context.words.map((word, i) => (
+      <li key={i} className="wordlist-item">
+        <Word word={word}/>
+      </li>
+    ))
+
     return (
-      <ul>
+      <ul className="wordlist-grid">
         {words}
       </ul>
     )
   }
 
   render() {
+    const languageName = this.context.language.name || 'your language';
+    const totalScore = this.context.language.total_score || 0;
+
     return (
       <div className="wordlist">
-        <h2>Start Practicing {this.context.language.name}</h2>
-        <h3 className="list-summary">Words to practice</h3>
+        <div className="dashboard-hero">
+          <span className="eyebrow">Today&apos;s session</span>
+          <h2>Practice {languageName}</h2>
+          <p>
+            Review your deck, then start a focused repetition round to strengthen the words that need it most.
+          </p>
+          <div className="dashboard-actions">
+            <Button className="start-practice-btn">
+              <Link to='/learn'>
+                Start practicing
+              </Link>
+            </Button>
+            <span className="total-correct">Total correct answers: {totalScore}</span>
+          </div>
+        </div>
+        <div className="wordlist-header">
+          <div>
+            <span className="eyebrow">Deck overview</span>
+            <h3 className="list-summary">Words to practice</h3>
+          </div>
+          <span className="word-count">{this.context.words.length} words</span>
+        </div>
         {this.renderWordList()}
-        <Button><Link to='/learn'>
-          Start practicing
-        </Link>
-        </Button>
-        <h4 className="total-correct">Total correct answers: {this.context.language.total_score}</h4>
       </div>
     )
   }
